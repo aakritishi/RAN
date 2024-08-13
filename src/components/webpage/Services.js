@@ -6,7 +6,7 @@ import ideaincubation from "../media/images/ideaincubation.png";
 export const Services = () => {
   return (
     <div className="text-2xl">
-      <div className="flex justify-center my-3 text-4xl font-extrabold course-titles md:text-4xl"  style={{ fontFamily: "'Merriweather', serif" }}>
+
         Services
       </div>
 
