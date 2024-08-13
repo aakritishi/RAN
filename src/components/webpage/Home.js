@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Services } from './Services'
+import Introduction from './Introduction'
+import Heading from './Heading'
 
 export class Home extends Component {
   render() {
     return (
       <div>
-        <Services/>
+        <Heading/>
+        <Introduction/>
       </div>
     )
   }
