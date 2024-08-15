@@ -9,10 +9,10 @@ export default function Product() {
       <div className="container px-6 py-12 mx-auto">
         {/* Header Section */}
         <div className="mb-12 text-center">
-          <h1 className="mb-4 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-500">
+          <h1 className="mb-4 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-500">
             Our Products
           </h1>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-gray-800">
             Discover our innovative robotics and software solutions designed for a cutting-edge future.
           </p>
         </div>

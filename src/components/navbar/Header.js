@@ -13,18 +13,19 @@ export default function Header() {
 
   return (
     <header className="text-white shadow-lg bg-slate-600">
-      <nav className="container flex items-center justify-between p-4 mx-auto navbar-links" id="navbarSupportedContent">
+      <nav className="container flex items-center justify-between p-4 mx-auto navbar-links">
         <Link to="/" className="flex items-center text-2xl font-bold">
           <img src={logo} className='w-28 h-16 mr-2' alt="Logo" />
         </Link>
 
         <div className="items-center hidden space-x-8 lg:flex" id="navbarSupportedContent">
-          {/* Conditionally render the "Home" link based on the current path */}
+
           {location.pathname !== '/' && (
             <Link to="/" className="flex items-center px-4 py-2 font-medium text-white transition-all duration-300 rounded-lg hover:text-yellow-300 focus:outline-none">
               Home
             </Link>
           )}
+
           <Link to='/aboutus' className="flex items-center px-4 py-2 font-medium text-white transition-all duration-300 rounded-lg hover:text-yellow-300 focus:outline-none">About Us</Link>
 
           <div className="relative">
@@ -41,14 +42,14 @@ export default function Header() {
             </button>
             <ul
               id="robotics-menu"
-              className={`absolute mt-2 space-y-2 bg-gray-800 text-white shadow-lg border border-gray-700 rounded-xl transition-transform transform ${isRoboticsOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'} transition-all duration-300`}
+              className={`absolute mt-2 space-y-2 bg-gray-800 text-white shadow-lg border border-gray-700 w-[100%] rounded-xl transition-transform transform ${isRoboticsOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'} transition-all duration-300`}
               role="menu"
             >
-              <li><Link className="block px-6 py-3 transition-colors duration-300 hover:bg-gray-700" to="/robotics">Kanchi</Link></li>
+              <li><Link className="block px-6 py-3 transition-colors duration-300 hover:bg-gray-700 rounded-t-xl" to="/robotics">Kanchi</Link></li>
               <li><hr className="border-gray-700" /></li>
               <li><Link className="block px-6 py-3 transition-colors duration-300 hover:bg-gray-700" to="/robotics/maili">Maili</Link></li>
               <li><hr className="border-gray-700" /></li>
-              <li><Link className="block px-6 py-3 transition-colors duration-300 hover:bg-gray-700" to="/robotics/jethi">Jethi</Link></li>
+              <li><Link className="block px-6 py-3 transition-colors duration-300 hover:bg-gray-700 rounded-b-lg" to="/robotics/jethi">Jethi</Link></li>
             </ul>
           </div>
 

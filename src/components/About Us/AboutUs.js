@@ -8,7 +8,7 @@ export default function AboutUs() {
         <div className='flex flex-wrap items-center my-12'>
           <div className='w-full md:w-1/2 lg:w-1/2'>
             <h1 className='mb-6 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500'>History of RAN</h1>
-            <p className='text-lg text-gray-300'>
+            <p className='text-lg text-gray-800'>
               RAN was founded in 1994 by a group of visionary individuals who set out to revolutionize technology. Since then, we have become pioneers in robotics, consistently pushing the boundaries of innovation and excellence.
             </p>
           </div>
@@ -24,7 +24,7 @@ export default function AboutUs() {
         {/* Mission Section */}
         <div className='my-12'>
           <h1 className='mb-6 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500'>Our Mission</h1>
-          <p className='text-lg text-gray-300'>
+          <p className='text-lg text-gray-800'>
             Our mission is to drive the future of robotics with advanced, intelligent solutions. We are committed to innovation, excellence, and fostering a culture that embraces cutting-edge technologies and collaboration.
           </p>
         </div>
