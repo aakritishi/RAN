@@ -3,41 +3,51 @@ import React from 'react';
 export default function AboutUs() {
   return (
     <>
-      <div className='container px-4 mx-auto'>
-        <div className='row h-[300px] my-5'>
-          <div className='col-6'>
-            <h1 className='mb-4 text-3xl font-bold'>History of RAN</h1>
-            <p className='text-lg'>
-              RAN was founded in 1994 by a group of passionate individuals who aimed to create a groundbreaking platform in technology. Over the years, we have grown into a leading entity in the field, constantly innovating and striving to exceed expectations.
+      <div className='container px-6 py-12 mx-auto'>
+        {/* History Section */}
+        <div className='flex flex-wrap items-center my-12'>
+          <div className='w-full md:w-1/2 lg:w-1/2'>
+            <h1 className='mb-6 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500'>History of RAN</h1>
+            <p className='text-lg text-gray-300'>
+              RAN was founded in 1994 by a group of visionary individuals who set out to revolutionize technology. Since then, we have become pioneers in robotics, consistently pushing the boundaries of innovation and excellence.
             </p>
           </div>
-          <div className='col-6'>
-            <img src="https://via.placeholder.com/350" alt="Company History" className='object-cover rounded-lg shadow-lg' />
+          <div className='w-full md:w-1/2 lg:w-1/2'>
+            <img 
+              src="https://via.placeholder.com/350" 
+              alt="Company History" 
+              className='object-cover transition-shadow duration-300 border-4 rounded-lg shadow-2xl hover:shadow-2xl hover:shadow-teal-500/50 hover:scale-105' 
+            />
           </div>
         </div>
 
-        <div className='my-5'>
-          <h1 className='mb-4 text-3xl font-bold'>Our Mission</h1>
-          <p className='text-lg'>
-            Our mission is to revolutionize the industry with cutting-edge solutions and technologies. We are dedicated to delivering excellence and fostering a culture of innovation and collaboration.
+        {/* Mission Section */}
+        <div className='my-12'>
+          <h1 className='mb-6 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500'>Our Mission</h1>
+          <p className='text-lg text-gray-300'>
+            Our mission is to drive the future of robotics with advanced, intelligent solutions. We are committed to innovation, excellence, and fostering a culture that embraces cutting-edge technologies and collaboration.
           </p>
         </div>
 
-        <div>
-          <h1 className='mb-6 text-3xl font-semibold text-center'>Meet Our Team</h1>
-        </div>
-
-        <div className='mt-12'>
+        {/* Team Section */}
+        <div className='my-12'>
+          <h1 className='mb-8 text-4xl font-extrabold text-center text-transparent bg-clip-text '>Meet Our Team</h1>
           <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
             {Array(8).fill().map((_, index) => (
               <div className='max-w-sm mx-auto' key={index}>
-                <div className="transition-all duration-500 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105">
-                  <img src="https://via.placeholder.com/150" className="transition-transform duration-500 transform rounded-t-lg hover:scale-110" style={{ height: "200px", objectFit: "cover", width: '100%' }} alt="Team Member" />
-                  <div className="p-4">
-                    <h5 className="text-xl font-semibold text-blue-900 transition-all duration-300 hover:text-blue-700">
+                <div className="relative overflow-hidden transition-transform duration-500 transform border-2 rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/50">
+                  <img 
+                    src="https://via.placeholder.com/150" 
+                    className="object-cover rounded-t-lg" 
+                    style={{ height: "200px", width: '100%' }} 
+                    alt="Team Member" 
+                  />
+                  <div className="absolute inset-0 transition-opacity duration-300 opacity-0 "></div>
+                  <div className="relative p-4 bg-gray-800">
+                    <h5 className="text-xl font-semibold text-purple-500 transition-colors duration-300 hover:text-teal-400">
                       NAME
                     </h5>
-                    <p className="text-sm font-medium text-gray-600">FACULTY</p>
+                    <p className="text-sm font-medium text-gray-400">POSITION</p>
                   </div>
                 </div>
               </div>
