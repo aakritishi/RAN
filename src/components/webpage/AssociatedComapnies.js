@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { SubAssociated } from './SubAssociated';
 import partner1 from '../media/images/partner1.png';
+import partner2 from '../media/images/partner2.png';
 
 export class AssociatedCompanies extends Component {
   render() {
@@ -20,8 +21,8 @@ export class AssociatedCompanies extends Component {
           />
           <SubAssociated
             link={""}
-            image={partner1}
-            title={"Our LMS partner"}
+            image={partner2}
+            title={"Our Non Credit Course Partner"}
           />
           <SubAssociated
             link={""}
