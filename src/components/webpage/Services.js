@@ -5,28 +5,28 @@ import ideaincubation from "../media/images/ideaincubation.png";
 
 export const Services = () => {
   return (
-    <div className="text-2xl">
-      <div className="flex justify-center my-3 text-4xl font-extrabold course-titles md:text-4xl"  style={{ fontFamily: "'Merriweather', serif" }}>
-        Services
-      </div>
+    <div className="">
+        <h1 className='text-xl text-red-500 font-bold md:text-3xl text-center mt-5'>
+          Products and Services
+        </h1>
 
-      <div className="course-desc w-[94%] flex flex-col sm:flex-row flex-wrap justify-center mx-auto gap-6">
+      <div className="course-desc w-full flex flex-col sm:flex-row flex-wrap justify-center mx-auto gap-6">
         <SubServices
           image={robotics}
-          title={"Robotics"}
-          description={"Learn about robotics"}
+          title={"Kanchi"}
+          description={"Services Kanchi can provide is ..."}
           link={""}
         />
         <SubServices
           image={education}
-          title={"Education"}
-          description={"learn about education which we provide"}
+          title={"product or service 2"}
+          description={"description about product or service 2"}
           link={""}
         />
         <SubServices
           image={ideaincubation}
-          title={"Idea Incubation"}
-          description={"idea incubation "}
+          title={"product or service 3"}
+          description={"description about product or service 3"}
           link={""}
         />
       </div>
