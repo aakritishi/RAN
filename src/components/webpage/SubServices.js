@@ -1,7 +1,7 @@
 export const SubServices = ({ image, title, description, link }) => {
     return (
       <div className="services relative bg-transparent-black my-3 w-full md:w-1/3 lg:w-1/4 p-2">
-        <div className="p-3 my-1 bg-slate-200 rounded-lg  ease-in">
+        <div className="p-3 my-1 bg-gray-800 rounded-lg  ease-in">
         {/* card image */}
         <div className="flex justify-center">
           <img
@@ -12,12 +12,12 @@ export const SubServices = ({ image, title, description, link }) => {
         </div>
           
         <div>
-          <h2 className=" px-3 py-2 text-black text-xl font-semibold md:right-2 lg:right-4  text-center">
+          <h2 className=" px-3 py-2 text-white text-xl font-semibold md:right-2 lg:right-4  text-center">
             {title} 
           </h2>
         </div>
           
-        <h2 className=" left-0 w-full text-lg sm:text-xl lg:text-xl font-sans text-black text-center px-4">
+        <h2 className=" left-0 w-full text-lg sm:text-xl lg:text-xl font-sans text-white text-center px-4">
             {description}
         </h2>
 
