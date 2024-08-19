@@ -3,11 +3,13 @@ import logo from '../media/images/ranlogo.png';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRoboticsOpen, setIsRoboticsOpen] = useState(false);
   const [isProductOpen, setIsProductOpen] = useState(false);
   
   const location = useLocation(); // Get the current path
   
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleRoboticsDropdown = () => setIsRoboticsOpen(!isRoboticsOpen);
   const toggleProductDropdown = () => setIsProductOpen(!isProductOpen);
 
@@ -18,8 +20,22 @@ export default function Header() {
           <img src={logo} className='w-28 h-16 mr-2' alt="Logo" />
         </Link>
 
-        <div className="items-center hidden space-x-8 lg:flex" id="navbarSupportedContent">
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} aria-label="Toggle menu">
+            {isMenuOpen ? (
+              <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
+          </button>
+        </div>
 
+        {/* Desktop Menu */}
+        <div className="items-center hidden space-x-8 lg:flex" id="navbarSupportedContent">
           {location.pathname !== '/' && (
             <Link to="/" className="flex items-center px-4 py-2 font-medium text-white transition-all duration-300 rounded-lg hover:text-yellow-300 focus:outline-none">
               Home
@@ -62,6 +78,56 @@ export default function Header() {
               Login
             </button>
           </Link>
+        </div>
+
+        {/* Sliding Menu for Small Screens */}
+        <div className={`fixed top-0 right-0 h-full bg-slate-700 z-50 transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} w-64 lg:hidden`}>
+          <div className="flex justify-end p-4">
+            <button onClick={toggleMenu} aria-label="Close menu">
+              <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <ul className='flex flex-col gap-5 p-5 mt-10'>
+            <li>
+              <Link to='/' onClick={toggleMenu} className="text-xl text-white hover:text-gray-300 transition duration-300">Home</Link>
+            </li>
+            <li>
+              <Link to='/aboutus' onClick={toggleMenu} className="text-xl text-white hover:text-gray-300 transition duration-300">About Us</Link>
+            </li>
+            <li>
+              <button 
+                onClick={toggleRoboticsDropdown} 
+                className="text-xl text-white hover:text-gray-300 transition duration-300"
+              >
+                Robotics
+              </button>
+              {isRoboticsOpen && (
+                <ul className="mt-2 bg-gray-800 text-white rounded-lg shadow-lg z-20">
+                  <li><Link to="/robotics" className="block px-4 py-2 hover:bg-gray-700" onClick={toggleMenu}>Kanchi</Link></li>
+                  <li><Link to="/robotics/maili" className="block px-4 py-2 hover:bg-gray-700" onClick={toggleMenu}>Maili</Link></li>
+                  <li><Link to="/robotics/jethi" className="block px-4 py-2 hover:bg-gray-700" onClick={toggleMenu}>Jethi</Link></li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link to='/product' onClick={toggleMenu} className="text-xl text-white hover:text-gray-300 transition duration-300">Our Product</Link>
+            </li>
+            <li>
+              <Link to='/careers' onClick={toggleMenu} className="text-xl text-white hover:text-gray-300 transition duration-300">Careers</Link>
+            </li>
+            <li>
+              <Link to='/contact' onClick={toggleMenu} className="text-xl text-white hover:text-gray-300 transition duration-300">Contact Us</Link>
+            </li>
+            <li>
+              <Link to='/login' onClick={toggleMenu}>
+                <button className="bg-blue-600 text-white py-2 px-3 rounded-lg text-sm shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 focus:outline-none">
+                  Login
+                </button>
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
